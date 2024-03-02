@@ -1,0 +1,50 @@
+<mat-slide-toggle class="header" (toggleChange)="toggleTheme()"></mat-slide-toggle>
+
+
+
+<div class="main-content">
+  <avatar class="avatar" (avatarSelected)="toggleChatBotOpen()"></avatar>
+  <form
+    *ngIf="isChatbotOpen"
+    (submit)="onSubmitPropmt()"
+    class="chat-bot"
+    [formGroup]="options"
+  >
+    <mat-button-toggle-group
+      class="model-type"
+      ngDefaultControl
+      formControlName="modelType"
+      name="fontStyle"
+      aria-label="Font Style"
+    >
+      <mat-button-toggle value="mistral">mistral</mat-button-toggle>
+      <mat-button-toggle value="llama2">llama2</mat-button-toggle>
+      <mat-button-toggle value="codellama">codellama</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-form-field
+      ngDefaultControl
+      class="chat-text"
+    >
+      <textarea
+        matInput
+        [ngClass]="{'chat-text-area': !options.valid}"
+        class="chat-text-area"
+        formControlName="chatBox"
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="3"
+        cdkAutosizeMaxRows="10"
+        placeholder="Please enter a prompt..."
+      ></textarea>
+    </mat-form-field>
+    <button type="submit" mat-raised-button>Submit Prompt</button>
+  </form>
+  <p *ngIf="isLoading$ | async" class="aleph-response">Aleph is thinking...</p>
+  <div class="aleph-response" *ngIf="alephResponse">
+    <p>{{ alephResponse }}</p>
+    <button type="button" (click)="resetState()" mat-raised-button>
+      Submit Another Prompt
+    </button>
+  </div>
+</div>

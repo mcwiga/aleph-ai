@@ -1,0 +1,10 @@
+<p *ngIf="displayText">aleph.</p>
+<avvvatars
+  [borderColor]="'var(--mat-app-text-color, inherit)'"
+  [shadow]="true"
+  value="India"
+  (click)="avatarSelected.emit(true)"
+  [displayValue]="'Ollama Chat'"
+  [style]="'shape'"
+  [size]="size"
+></avvvatars>

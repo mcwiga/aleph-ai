@@ -1,0 +1,36 @@
+@use '@angular/material' as mat;
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+$primary: mat.define-palette(mat.$blue-grey-palette);
+$accent: mat.define-palette(mat.$blue-grey-palette);
+$warn: mat.define-palette(mat.$blue-grey-palette);
+
+@include mat.core();
+
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn
+  )
+));
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn
+  ),
+  // typography: mat.define-typography-config(),
+  // density: 0
+));
+
+@include mat.core-color($light-theme);
+@include mat.button-color($light-theme);
+//@include mat.all-component-themes($light-theme);
+
+.dark-theme {
+  @include mat.core-theme($dark-theme);
+  @include mat.button-theme($dark-theme);
+  @include mat.all-component-colors($dark-theme);
+}
