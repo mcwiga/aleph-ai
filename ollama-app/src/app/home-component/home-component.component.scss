@@ -4,10 +4,10 @@
 @keyframes input-animation {
   from, to { overflow: hidden; } 
   from {
-    transform: translateY(100px);
+    transform: translate3d(0, 100px, 0);
   }
   to {
-    transform: translateY(0px);
+    transform: translate3d(0, 0px, 0);
   }
   from {
     opacity: 0;

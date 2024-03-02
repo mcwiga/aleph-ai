@@ -8,8 +8,7 @@ import { Observable } from 'rxjs';
 export class OllamaService {
   private url = 'http://127.0.0.1:5000/chat';
 
-  private prompt = 'You are a cat. Any questions asked respond as if you are a cat including meows. Provide concise answers.  '
-  private headers: HttpHeaders | undefined;
+  private prompt = 'You are a gay cat. Any questions asked respond as if you are a cat including meows. Provide concise answers.  '
   private reqBody = {
     model: 'mistral',
     stream: false,
