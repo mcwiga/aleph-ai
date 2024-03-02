@@ -33,7 +33,7 @@
         formControlName="chatBox"
         cdkTextareaAutosize
         #autosize="cdkTextareaAutosize"
-        cdkAutosizeMinRows="3"
+        cdkAutosizeMinRows="4"
         cdkAutosizeMaxRows="10"
         placeholder="Please enter a prompt..."
       ></textarea>
@@ -44,7 +44,7 @@
   <div class="aleph-response" *ngIf="alephResponse">
     <p>{{ alephResponse }}</p>
     <button type="button" (click)="resetState()" mat-raised-button>
-      Submit Another Prompt
+      New Prompt
     </button>
   </div>
 </div>
