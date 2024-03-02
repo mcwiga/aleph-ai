@@ -53,7 +53,7 @@ export class HomeComponentComponent {
   public isLoading$ = this.isLoading.asObservable();
 
   public constructor(
-    private readonly themingService: ThemingService,
+    public readonly themingService: ThemingService,
     private readonly fb: FormBuilder,
     private readonly ollamaService: OllamaService
   ) {
